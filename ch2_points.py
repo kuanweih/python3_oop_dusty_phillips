@@ -11,4 +11,5 @@ class Point:
         self.x = x
         self.y = y
         
-    
+    def move(self):
+        pass
