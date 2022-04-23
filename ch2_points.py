@@ -14,3 +14,9 @@ class Point:
         """ Move the point to (x, y). """
         self.x = x
         self.y = y
+        
+    def reset(self):
+        """ Reset the point back to (0, 0). """
+        self.move(0, 0)
+        
+        
