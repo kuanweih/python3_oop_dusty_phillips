@@ -19,4 +19,7 @@ class Point:
         """ Reset the point back to (0, 0). """
         self.move(0, 0)
         
-        
+    def calc_distance(self, other_point):
+        """ Calculate the distance between this point and another point """
+        return math.sqrt(
+            (self.x - other_point.x)**2 + (self.y - other_point.y)**2)
