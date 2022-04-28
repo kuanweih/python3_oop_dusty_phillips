@@ -58,7 +58,7 @@ class Notebook:
             a Note object: the note with given id.
         """
         for note in self.notes:
-            if note.id == note_id:
+            if str(note.id) == str(note_id):
                 return note
         return None
 
