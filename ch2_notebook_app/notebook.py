@@ -49,16 +49,46 @@ class Notebook:
         self.notes.append(Note(memo, tags))
 
     def _find_note(self, note_id):
+        """ Locate the note with given id.
+
+        Args:
+            note_id (int): the given note id.
+
+        Returns:
+            a Note object: the note with given id.
+        """
         for note in self.notes:
             if note.id == note_id:
                 return note
         return None
 
     def modify_memo(self, note_id, memo):
+        """ Find the note with the given id and change its memo to the
+            given value.
+
+        Args:
+            note_id (int): the given note id.
+            memo (str): the new memo.
+        """
         self._find_note(note_id).memo = memo  #TODO: what if note_id not exist?
     
     def modify_tags(self, note_id, tags):
+        """ Find the note with the given id and change its tags to the
+            given value.
+
+        Args:
+            note_id (int): the given note id.
+            tags (str): the new tags.
+        """
         self._find_note(note_id).tags = tags  #TODO: what if note_id not exist?
     
     def search(self, filter):
+        """ Find all notes that match the given filter string.
+
+        Args:
+            filter (str): the filter string.
+
+        Returns:
+            [list]: a list of notes containing the filter string.
+        """
         return [note for note in self.notes if note.match(filter)]
