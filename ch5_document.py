@@ -18,6 +18,10 @@ class Document:
         with open(self.filename, "w") as f:
             f.write("".join(self.characters))
 
+    @property
+    def string(self):
+        return "".join(self.characters)
+
 
 class Cursor:
 
@@ -64,7 +68,7 @@ if __name__ == "__main__":
     doc.insert("d")
     doc.cursor.home()
     doc.insert("*")
-    print("".join(doc.characters))
+    print(doc.string)
 
     
 
